@@ -1,2 +1,2 @@
 # burrowing_parrot
-Codes for training models and count burrowing parrot nests in ecological images
+Codes for model training and nest counting of burrowing parrots in ecological images
