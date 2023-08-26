@@ -15,4 +15,4 @@ PROCEDURE:
 
 6) For the counting task, the set of images are saved in the Google Drive repository: https://drive.google.com/drive/folders/1IXhXNUsAx_8Su3stdxb-BGsgJFGdg9Fb?usp=sharing, folders "por_kilometro" and "por_kilometro_marcadas". The first one contains 18 folders, each one containing the images of each kilometre of the colony. The second one contains another 18 folders with similar images, but in this case we can find the vertical yellow lines marked by the expert to delimit the counting area.
 
-7) For the final counting of the entire colony, use the Google Colab script "whole_colony_counting.ipynb". The script also creates a report called "resultados_conteo_<name-of-the-used-model>.txt", saved in the same Google Drive repository.
+7) For the final counting of the entire colony, use the Google Colab script "whole_colony_counting.ipynb". The script also creates a report called "resultados_conteo_"+"name-of-the-used-model".txt", saved in the same Google Drive repository.
