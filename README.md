@@ -3,7 +3,7 @@ Codes for model training and nest-entrance counts on photographs from a Burrowin
 
 PROCEDURE:
 
-1) An expert biologist creates patches of dimension 256 x 256 pixels, taken ramdomly from the original images. The patches should be representative of the colony configuration. The expert also creates the recessary set of dot maps, marking the approximate center of each nest with a single pixe, on an image of zeros. The patches and the corresponding dot maps are saved on local folders called "original_patches" and "original_dots".
+1) An expert biologist creates patches of dimension 256 x 256 pixels, taken ramdomly from the original images. The patches should be representative of the colony configuration. The expert also creates the recessary set of dot maps, marking the approximate center of each nest with a single pixel, on an image of zeros. The patches and the corresponding dot maps are saved on local folders called "original_patches" and "original_dots".
 
 2) Run the Jupyter Notebook script "Adding_images.ipynb", which performs data augmentation through horizontal flips over both, patches and the corresponding dot maps. The script saves the whole augmented set in folders called "final_patches" and "final_dots".
 
