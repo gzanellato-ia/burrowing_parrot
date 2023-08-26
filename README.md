@@ -11,7 +11,7 @@ PROCEDURE:
 
 4) The resulting set of patches and dot maps are uploaded in the Google Drive repository: https://drive.google.com/drive/folders/1n200sPnM8jUHflfTkpXBfc0PEL8mbM6z?usp=sharing. Folders: "parches" and "puntos".
 
-5) To train the models run the Google Colab scripts: a) "burrowing_parrots_UNet.ipynb", b) "burrowing_parrots_ResUNet.ipynb" and c) "burrowing_parrots_DeepLabv3.ipyng". We use Google Colab to take advantage of the available GPUs. In our work we run each script 7 times, to generate 7 models, and execute 7 counts per model.
+5) To train the models run the Google Colab scripts: a) "burrowing_parrots_UNet.ipynb", b) "burrowing_parrots_ResUNet.ipynb" and c) "burrowing_parrots_DeepLabv3.ipynb". We use Google Colab to take advantage of the available GPUs. In our work we run each script 7 times, to generate 7 models, and execute 7 counts per model.
 
 6) For the counting task, the set of images are saved in the Google Drive repository: https://drive.google.com/drive/folders/1IXhXNUsAx_8Su3stdxb-BGsgJFGdg9Fb?usp=sharing, folders "por_kilometro" and "por_kilometro_marcadas". The first one contains 18 folders, each one containing the images of each kilometre of the colony. The second one contains another 18 folders with similar images, but in this case we can find the vertical yellow lines marked by the expert to delimit the counting area.
 
