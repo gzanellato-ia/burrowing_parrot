@@ -3,16 +3,22 @@ Codes for model training and nest-entrance counts on photographs from a Burrowin
 
 PROCEDURE:
 
-1) An expert biologist creates patches of dimension 256 x 256 pixels, taken randomly from the original images. The patches should be representative of the colony configuration. The expert also creates the necessary set of dot maps, marking the approximate centre of each nest with a single pixel, on an image of zeros. The patches and the corresponding dot maps are saved on local folders called "original_patches" and "original_dots".
+1) An expert biologist generates patches with dimensions of 256x256 pixels by randomly selecting them from the original images. These patches should accurately represent the colony configuration. The expert also produces the required set of dot maps by placing a single pixel to approximate the center of each nest on an image of zeros. The patches and their corresponding dot maps are then stored in local folders named "original_patches" and "original_dots."
+  
+2) Execute the Jupyter Notebook script titled "Adding_images.ipynb," which carries out data augmentation via horizontal flips for both the patches and their corresponding dot maps. The script saves the complete augmented set within folders labeled "final_patches" and "final_dots."
 
-2) Run the Jupyter Notebook script "Adding_images.ipynb", which performs data augmentation through horizontal flips over both, patches and the corresponding dot maps. The script saves the whole augmented set in folders called "final_patches" and "final_dots".
+3) During the ultimate counting process, the 3000x4000 pixel images are gridded into 256x256 pixel patches. However, the algorithm overestimates the counts by predicting false nests in areas where none exist, such as the sky, the beach at the cliff's bottom, fallen rocks, or water bodies. To address this issue, we introduce empty patches to the training set, representing these areas, along with corresponding empty dot maps. The Jupyter Notebook script "new_patches_creation.ipynb" can be employed to generate these empty patches. We anticipate that approximately 30%-40% of the entire training set should consist of these empty patches. In the future, this percentage could be reduced by capturing images focused solely on the cliff and taking closer shots, thereby avoiding the inclusion of the sky or beach.
 
-3) During the final counting task, we grid the entire 3000x4000 pixel images into 256x256 pixel patches. The algorithm overestimates the counting predicting false nests over areas where there are none, such as the sky, the beach at the bottom of the cliff, fallen rocks at the bottom of the cliff, or water. To solve the problem, we add to the training set some empty patches representing those areas, with corresponding empty dot maps. To create these empty patches (without nests) we can use the Jupyter Notebook script "new_patches_creation.ipynb". We estimate that 30%-40% of the entire training set should be empty patches. In the future, this percentage could be lowered, if the images are focused on the cliff and closer pictures are taken, avoiding capturing the sky or the beach for example.
+4) The resulting collection of patches and dot maps are uploaded to the Google Drive repository at: https://drive.google.com/drive/folders/1n200sPnM8jUHflfTkpXBfc0PEL8mbM6z?usp=sharing, under the folders "parches" and "puntos."
 
-4) The resulting set of patches and dot maps are uploaded in the Google Drive repository: https://drive.google.com/drive/folders/1n200sPnM8jUHflfTkpXBfc0PEL8mbM6z?usp=sharing. Folders: "parches" and "puntos".
+5) To train the models, execute the Google Colab scripts: a) "burrowing_parrots_UNet.ipynb," b) "burrowing_parrots_ResUNet.ipynb," and c) "burrowing_parrots_DeepLabv3.ipynb." Google Colab is utilized to leverage available GPUs. In our study, each script is executed 7 times, generating a total of 7 models, each subjected to 7 counts.
 
-5) To train the models run the Google Colab scripts: a) "burrowing_parrots_UNet.ipynb", b) "burrowing_parrots_ResUNet.ipynb" and c) "burrowing_parrots_DeepLabv3.ipynb". We use Google Colab to take advantage of the available GPUs. In our work we run each script 7 times, to generate 7 models, and execute 7 counts per model.
+6) For the counting task, the image set is stored in the Google Drive repository at: https://drive.google.com/drive/folders/1IXhXNUsAx_8Su3stdxb-BGsgJFGdg9Fb?usp=sharing, within folders "por_kilometro" and "por_kilometro_marcadas." The former encompasses 18 folders, each containing images for a specific kilometer of the colony. The latter also consists of 18 folders, containing similar images, but with vertical yellow lines marked by the expert to delineate the counting area.
 
-6) For the counting task, the set of images are saved in the Google Drive repository: https://drive.google.com/drive/folders/1IXhXNUsAx_8Su3stdxb-BGsgJFGdg9Fb?usp=sharing, folders "por_kilometro" and "por_kilometro_marcadas". The first one contains 18 folders, each one containing the images of each kilometre of the colony. The second one contains another 18 folders with similar images, but in this case we can find the vertical yellow lines marked by the expert to delimit the counting area.
+7) To perform the final colony-wide counting, utilize the Google Colab script "whole_colony_counting.ipynb." The script additionally generates a report named "resultados_conteo_"+"name-of-the-used-model".txt," which is saved within the same Google Drive repository.
 
-7) For the final counting of the entire colony, use the Google Colab script "whole_colony_counting.ipynb". The script also creates a report called "resultados_conteo_"+"name-of-the-used-model".txt", saved in the same Google Drive repository.
+
+
+
+
+
