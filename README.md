@@ -17,7 +17,8 @@ PROCEDURE:
 
 7) To perform the final colony-wide counting, utilize the Google Colab script "whole_colony_counting.ipynb." The script additionally generates a report named "resultados_conteo_"+"name-of-the-used-model".txt," which is saved within the same Google Drive repository.
 
-
+**Changes:**<br>
+Typically, the architectures used suggest using a sigmoid activation at the network output, since they were designed for segmentation tasks. In our case, searching for density maps following Waithe's instructions, we scaled the density values in the label images from 0-1 to 0-255 and used relu activation in the last layer. Then the density values are reduced to 0-1 accordingly.
 
 
 
